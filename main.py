@@ -8,7 +8,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from apscheduler.schedulers.asyncio import AsyncioScheduler
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
 
 # Данные вашего бота и канала
 BOT_TOKEN = "8736161280:AAHGgiJacTKNo37SHuXmPGqdg-lY37VI8Ls"
@@ -18,7 +19,7 @@ WATERMARK_PATH = "watermark.png"
 bot = Bot(token=BOT_TOKEN)
 storage = MemoryStorage()
 dp = Dispatcher(storage=storage)
-scheduler = AsyncioScheduler()
+scheduler = AsyncIOScheduler()
 
 class PostStates(StatesGroup):
     text = State()
