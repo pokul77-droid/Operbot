@@ -12,7 +12,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 
 # Данные вашего бота и канала
-BOT_TOKEN = "8736161280:AAHGgiJacTKNo37SHuXmPGqdg-lY37VI8Ls"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = "@Dnipro_meridian"
 WATERMARK_PATH = "watermark.png"
 
