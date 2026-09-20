@@ -140,6 +140,9 @@ async def handle_reaction_click(callback: types.CallbackQuery):
 async def on_startup():
     scheduler.start()
 
+async def on_startup():
+    scheduler.start()
+
 async def main():
     dp.startup.register(on_startup)
     await dp.start_polling(bot)
