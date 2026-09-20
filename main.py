@@ -137,9 +137,15 @@ async def handle_reaction_click(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=reply_markup)
     await callback.answer()
 
-async def main():
+async def on_startup():
     scheduler.start()
+
+async def main():
+    dp.startup.register(on_startup)
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        print("Бот остановлен")
